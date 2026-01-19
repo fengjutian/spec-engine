@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "dev:admin": "cd apps/admin && vite",
-    "start:server": "ts-node server/index.ts"
+    "start:server": "ts-node --esm server/index.ts"
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",
