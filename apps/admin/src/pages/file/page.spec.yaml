@@ -1,0 +1,21 @@
+page: file-management
+compose:
+  - module.search
+  - module.table
+  - module.drawer
+entity:
+  name: File
+  fields:
+    - name: id
+      type: string
+      required: true
+    - name: name
+      type: string
+      required: true
+    - name: type
+      type: enum
+      options: [PDF, Word, Excel]
+actions:
+  row:
+    delete:
+      confirmText: "确认删除该文件？"
