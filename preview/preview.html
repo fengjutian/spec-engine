@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spec Editor UI Mock</title>
+<style>
+  body { margin: 0; font-family: Arial, sans-serif; }
+  .container { display: flex; height: 100vh; }
+  .sidebar { width: 200px; background: #f5f5f5; border-right: 1px solid #ddd; padding: 10px; }
+  .sidebar h3 { margin-top: 0; }
+  .sidebar ul { list-style: none; padding: 0; }
+  .sidebar li { padding: 5px; cursor: pointer; border-radius: 4px; }
+  .sidebar li:hover { background: #e0e0e0; }
+  
+  .config-panel { width: 350px; background: #fff; border-right: 1px solid #ddd; padding: 15px; overflow-y: auto; }
+  .config-panel h3 { margin-top: 0; }
+  .form-group { margin-bottom: 12px; }
+  .form-group label { display: block; font-weight: bold; margin-bottom: 4px; }
+  .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 6px; box-sizing: border-box; }
+
+  .preview { flex: 1; background: #f0f2f5; padding: 15px; overflow-y: auto; }
+  .preview h3 { margin-top: 0; }
+  .module { background: #fff; padding: 10px; margin-bottom: 10px; border-radius: 6px; border: 1px solid #ddd; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <!-- 左侧模块树 -->
+  <div class="sidebar">
+    <h3>页面模块</h3>
+    <ul>
+      <li>Search 模块</li>
+      <li>Table 模块</li>
+      <li>Drawer / Form 模块</li>
+      <li>Pagination 模块</li>
+      <li>其他模块...</li>
+    </ul>
+  </div>
+
+  <!-- 中间配置面板 -->
+  <div class="config-panel">
+    <h3>模块配置</h3>
+
+    <div class="form-group">
+      <label>字段名</label>
+      <input type="text" value="name">
+    </div>
+    <div class="form-group">
+      <label>字段类型</label>
+      <select>
+        <option>string</option>
+        <option>number</option>
+        <option>enum</option>
+        <option>datetime</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>必填</label>
+      <select>
+        <option>true</option>
+        <option>false</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>枚举选项 (逗号分隔)</label>
+      <input type="text" value="PDF,Word,Excel">
+    </div>
+    <div class="form-group">
+      <label>操作行为</label>
+      <select>
+        <option>新增</option>
+        <option>编辑</option>
+        <option>删除</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>权限/数据隔离字段</label>
+      <input type="text" value="openid">
+    </div>
+
+    <button>保存配置</button>
+  </div>
+
+  <!-- 右侧页面预览 -->
+  <div class="preview">
+    <h3>页面预览</h3>
+    <div class="module">
+      <strong>Search:</strong>
+      <input type="text" placeholder="请输入文件名称">
+      <button>查询</button>
+      <button>重置</button>
+    </div>
+    <div class="module">
+      <strong>Table:</strong>
+      <table border="1" width="100%" cellspacing="0" cellpadding="4">
+        <tr>
+          <th>名称</th>
+          <th>类型</th>
+          <th>操作</th>
+        </tr>
+        <tr>
+          <td>文件1</td>
+          <td>PDF</td>
+          <td><button>编辑</button> <button>删除</button></td>
+        </tr>
+        <tr>
+          <td>文件2</td>
+          <td>Word</td>
+          <td><button>编辑</button> <button>删除</button></td>
+        </tr>
+      </table>
+    </div>
+    <div class="module">
+      <strong>Drawer / Form:</strong>
+      <div>表单弹出时显示在这里</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
